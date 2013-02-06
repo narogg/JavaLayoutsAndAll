@@ -18,6 +18,10 @@ import javax.swing.JTextField;
 public class FirstGui extends JFrame
 {
 
+	
+	
+	JCheckBox ckb1, ckb2;
+	
 	private static final long serialVersionUID = 1L;
 	
 	public FirstGui() {
@@ -33,8 +37,11 @@ public class FirstGui extends JFrame
 		JButton btn1 = new JButton("Klik 1");
 		JButton btn2 = new JButton("Klik 2");
 		
-		JCheckBox ckb1 = new JCheckBox("Ček 1");
-		JCheckBox ckb2 = new JCheckBox("Ček 2");
+		ckb1 = new JCheckBox("Ček 1");
+		ckb2 = new JCheckBox("Ček 2");
+		
+		
+		
 		
 		JLabel lbl1 = new JLabel("Neki naslov");
 		JTextArea txa = new JTextArea("Ovo je neki tekst ...");
@@ -70,8 +77,20 @@ public class FirstGui extends JFrame
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null, "Klinuto je OK ... ");
+				
+				String s = "OK, you checked good.";
+				
+				if(ckb1.isSelected())
+				{
+					s += " That is first checkbox.";
+				}
+				
+				if(ckb2.isSelected())
+				{
+					s += " That is second checkbox.";
+				}
+				
+				JOptionPane.showMessageDialog(null, s);
 			}
 		});
 		
